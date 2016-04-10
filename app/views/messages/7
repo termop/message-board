@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    メッセージ一覧
+  </div>
+
+  <div class="panel-body">
+    <% @messages.each do |message| %>
+      <span class=label label-info"><%=message.name %></span>
+      <%= message.body %>
+      <br>
+    <% end %>
+  </div>
+</div>
+
+
+<%= form_for(@message) do |f| %>
+  姓:
+  <br>
+  <%= f.text_area :name, size:"30x1" %>
+  <br>
+
+  名:
+  <br>
+  <%= f.text_area :name, size:"30x1" %>
+  <br>
+  <br>
+
+  内容:(100字以内でご記入下さい。)
+  <br>
+  <%= f.text_area :body, size:"30x5" %>
+  <br>
+  <%= f.submit %>
+<% end %>
